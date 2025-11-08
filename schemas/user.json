@@ -1,0 +1,34 @@
+{
+    "name": "User",
+    "confluence-page": "https://softwareone.atlassian.net/wiki/spaces/mpt/pages/6758564138/DG+User+object",
+    "state-diagram": "https://www.figma.com/design/rHxTpbi2gpbZ4dmVlyeY2S/Object-Diagrams?node-id=1283-659&p=f&t=k7JDuYOhLuBhAzih-0",
+    "desktop": {
+        "grid-view": {
+            "vendor": null,
+            "operations": null,
+            "client": null
+        },
+        "details-view": {
+            "vendor": null,
+            "operations": null,
+            "client": null
+        },
+        "infocard-view": {
+            "vendor": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?page-id=58142%3A96478&node-id=58554-116157&viewport=-3144%2C1442%2C0.52&t=A6BpEp4w4g2CI0Wo-1&scaling=min-zoom&content-scaling=fixed",
+            "operations": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?page-id=58142%3A96478&node-id=58554-116157&viewport=-3144%2C1442%2C0.52&t=A6BpEp4w4g2CI0Wo-1&scaling=min-zoom&content-scaling=fixed",
+            "client": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?page-id=58142%3A96478&node-id=58554-116157&viewport=-3144%2C1442%2C0.52&t=A6BpEp4w4g2CI0Wo-1&scaling=min-zoom&content-scaling=fixed"
+        }
+    },
+    "mobile": {
+        "list-view": {
+            "vendor": null,
+            "operations": null,
+            "client": null
+        },
+        "details-view": {
+            "vendor": null,
+            "operations": null,
+            "client": null
+        }
+    }
+}
