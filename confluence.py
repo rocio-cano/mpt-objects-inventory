@@ -1,0 +1,146 @@
+#!/usr/bin/env python
+
+from config import Config
+import re
+import requests
+from bs4 import BeautifulSoup
+import os
+
+cfg = Config()
+
+
+class Confluence:
+
+    def delete_confluence_attachment(self, attachment_id, status):
+        delete_url = f"{cfg.CONFLUENCE_BASE_URL}/rest/api/content/{attachment_id}?status={status}"
+        delete_response = requests.delete(
+            delete_url,
+            headers={"Accept": "application/json"},
+            auth=cfg.CONFLUENCE_AUTH
+        )
+        delete_response.raise_for_status()
+
+
+    def get_confluence_page_id_from_url(self, confluence_page_url):
+        return confluence_page_url.split('/pages/')[1].split('/')[0]
+
+
+    def upload_image_to_confluence(self, page_url, image_path):
+
+        page_id = self.get_confluence_page_id_from_url(page_url)
+
+        # See: https://support.atlassian.com/confluence/kb/using-the-confluence-rest-api-to-upload-an-attachment-to-one-or-more-pages/
+        request_url = f'{cfg.CONFLUENCE_BASE_URL}/rest/api/content/{page_id}/child/attachment'
+        print(f"Uploading image version to Confluence: {image_path}")
+
+        filename = os.path.basename(image_path)
+
+        with open(image_path, 'rb') as file_handle:
+            files = {
+                'file': (filename, file_handle, 'image/png')
+            }
+            data = {
+                "minorEdit": "true"
+            }
+
+            # First try to update the existing attachment version; if it does not exist, fall back to upload a new one
+            # See: https://developer.atlassian.com/cloud/confluence/rest/v1/api-group-attachments/#api-wiki-rest-api-content-id-child-attachment-put
+            # We'll first check if an attachment with the filename exists, and if so, update it; otherwise, create new.
+
+            # First, check if the attachment already exists by filename
+            get_params = {
+                "filename": filename,
+                "expand": "version"
+            }
+            check_response = requests.get(
+                request_url,
+                headers={"Accept": "application/json"},
+                auth=cfg.CONFLUENCE_AUTH,
+                params=get_params
+            )
+            check_response.raise_for_status()
+            attachment_result = check_response.json()
+            results = attachment_result.get("results", [])
+
+            if results:
+                # Attachment exists, delete the existing attachment and upload a new one
+                attachment_id = results[0]["id"]
+                print(f"Deleting existing attachment with id: {attachment_id}")
+                self.delete_confluence_attachment(attachment_id, "current")
+                self.delete_confluence_attachment(attachment_id, "trashed")
+
+            response = requests.post(
+                request_url,
+                headers={
+                    "Accept": "application/json",
+                    "X-Atlassian-Token": "no-check"
+                },
+                auth=cfg.CONFLUENCE_AUTH,
+                files=files,
+                data=data
+            )
+
+            response.raise_for_status()
+            print(f"Successfully uploaded image version to Confluence")
+
+            data = response.json()
+            return data
+
+
+    def download_current_confluence_page(self, confluence_page_url):
+
+        page_id = self.get_confluence_page_id_from_url(confluence_page_url)
+
+        request_url = f'{cfg.CONFLUENCE_BASE_URL}/rest/api/content/{page_id}?expand=body.storage,version'
+        print(f"Downloading Confluence page via API: {request_url}")
+        resp = requests.get(
+            request_url, 
+            headers={"Accept": "application/json"}, 
+            auth=cfg.CONFLUENCE_AUTH
+            )
+        resp.raise_for_status()
+        data = resp.json()
+        page_title = data['title']
+        page_title_for_file = re.sub(r'[^a-zA-Z0-9_\-]', '-', page_title)
+        html_content = data['body']['storage']['value']
+        soup = BeautifulSoup(html_content, "html.parser")
+        html_content = soup.prettify()
+        with open(f"{cfg.TEMP_RENDER_FOLDER}/current-confluence-page-{page_id}-{page_title_for_file}.html", "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"Downloaded and saved current Confluence page to {cfg.TEMP_RENDER_FOLDER}/current-confluence-page-{page_id}-{page_title_for_file}.html")
+        print()
+
+        return page_title
+
+
+    def update_confluence_page(self, page_url, new_content):
+
+        page_id = self.get_confluence_page_id_from_url(page_url)
+
+        api_url = f"{cfg.CONFLUENCE_BASE_URL}/rest/api/content/{page_id}"
+        headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+        resp = requests.get(api_url, headers=headers, auth=cfg.CONFLUENCE_AUTH)
+        resp.raise_for_status()
+        current_title = resp.json()['title']
+        current_version = resp.json()["version"]["number"]
+
+        payload = {
+                "id": page_id,
+                "type": "page",
+                "title": current_title,
+                "body": {
+                    "storage": {
+                        "value": new_content,
+                        "representation": "storage"
+                    }
+                },
+                "version": {
+                "number": current_version + 1
+            }
+        }
+        put_response = requests.put(api_url, headers=headers, json=payload, auth=cfg.CONFLUENCE_AUTH)
+        put_response.raise_for_status()
+        return put_response.json()

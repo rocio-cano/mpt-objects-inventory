@@ -38,3 +38,7 @@ class Config:
         self.CONFLUENCE_BASE_URL = data['CONFLUENCE_BASE_URL']
 
         self.CONFLUENCE_AUTH = HTTPBasicAuth(self.CONFLUENCE_API_USERNAME, self.CONFLUENCE_API_TOKEN)
+
+        self.CONFLUENCE_SUMMARY_PAGE_URL = data['CONFLUENCE_SUMMARY_PAGE_URL']
+
+        self.TEMP_RENDER_FOLDER = 'build'
