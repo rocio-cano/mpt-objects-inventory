@@ -1,6 +1,7 @@
 {
     "name": "Price List",
     "confluence-page": "https://softwareone.atlassian.net/wiki/spaces/mpt/pages/6789496978/DG+Price+List+Object",
+    "state-diagram": null,
     "desktop": {
         "grid-view": {
             "vendor": null,
