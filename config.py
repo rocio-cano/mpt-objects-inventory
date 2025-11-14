@@ -8,8 +8,8 @@ from requests.auth import HTTPBasicAuth
 # Expected configuration JSON file:
 # 
 # {
-#    "API_URL": "{url goes here}"",
-#    "API_TOKEN": "{token goes here}""
+#    "API_URL": "{url goes here}",
+#    "API_TOKEN": "{token goes here}"
 # }
 #
 
