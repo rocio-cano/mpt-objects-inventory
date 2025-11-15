@@ -88,6 +88,45 @@ def upload_images_to_confluence(object_schema):
         counter += 1
 
 
+def populate_multitable_template(multitable_template, multitable_row_template, schema_values_array):
+
+    if schema_values_array is None or len(schema_values_array) == 0:
+        return '<p>Not defined</p>'
+
+    def get_header_value(schema_record):
+        if schema_record:
+            return f'<td data-highlight-colour="#f4f5f7"><p style="text-align: center;"><a href="{schema_record.figma_link}"><strong>{schema_record.title}</strong></a></p></td>'
+        return '<td data-highlight-colour="#f4f5f7"></td>'
+
+    def get_cell_value(schema_record):
+        if schema_record is None:
+            return '<td></td>'
+
+        base_filename = os.path.basename(schema_record.filename)
+        return f'<td><ac:image ac:align="center" ac:alt="{base_filename}" ac:custom-width="true" ac:layout="center" ac:original-height="3082" ac:original-width="1888" ac:width="343"><ri:attachment ri:filename="{base_filename}"></ri:attachment></ac:image></td>'
+
+    multitable_rows = ""
+    for i in range(0, len(schema_values_array), 5):
+        block = schema_values_array[i:i+5]
+        template_data = {
+            '{{cell11}}': get_header_value(block[0] if len(block) > 0 else None),
+            '{{cell12}}': get_header_value(block[1] if len(block) > 1 else None),
+            '{{cell13}}': get_header_value(block[2] if len(block) > 2 else None),
+            '{{cell14}}': get_header_value(block[3] if len(block) > 3 else None),
+            '{{cell15}}': get_header_value(block[4] if len(block) > 4 else None),
+
+            '{{cell21}}': get_cell_value(block[0] if len(block) > 0 else None),
+            '{{cell22}}': get_cell_value(block[1] if len(block) > 1 else None),
+            '{{cell23}}': get_cell_value(block[2] if len(block) > 2 else None),
+            '{{cell24}}': get_cell_value(block[3] if len(block) > 3 else None),
+            '{{cell25}}': get_cell_value(block[4] if len(block) > 4 else None),
+        }
+        multitable_rows += populate_template(multitable_row_template, template_data)
+
+    multitable_template = multitable_template.replace('{{multitable-rows}}', multitable_rows)
+    return multitable_template
+
+
 def update_confluence_page(object_schema):
 
     if SKIP_UPDATE_CONFLUENCE_PAGE_FOR_DEBUG:
@@ -214,6 +253,28 @@ def update_confluence_page(object_schema):
             '{{figma-link-column-3}}': object_schema.mobile_details_view_client.figma_link,
         }
     )
+
+    multitable_template = read_file("confluence-templates/multitable.html")
+    multitable_row_template = read_file("confluence-templates/multitable-row.html")
+
+    email_notifications_vendor_table = populate_multitable_template(
+        multitable_template,
+        multitable_row_template,
+        object_schema.email_notifications_vendor_array
+    )
+
+    email_notifications_operations_table = populate_multitable_template(
+        multitable_template,
+        multitable_row_template,
+        object_schema.email_notifications_operations_array
+    )
+
+    email_notifications_client_table = populate_multitable_template(
+        multitable_template,
+        multitable_row_template,
+        object_schema.email_notifications_client_array
+    )
+
     page_template = populate_template(
         page_template,
         {
@@ -224,6 +285,9 @@ def update_confluence_page(object_schema):
             '{{mobile-list-table-section}}': mobile_list_view_table_section,
             '{{mobile-details-table-section}}': mobile_details_view_table_section,
             '{{desktop-settings-table-section}}': desktop_settings_table_section,
+            '{{email-notifications-vendor-table}}': email_notifications_vendor_table,
+            '{{email-notifications-operations-table}}': email_notifications_operations_table,
+            '{{email-notifications-client-table}}': email_notifications_client_table,
         }
     )
 
@@ -322,7 +386,7 @@ def main():
     all_schema_files = sorted(glob.glob('./schemas/*.json'), key=lambda x: x.lower())
 
     # Debug: Limit to only specific schema files
-    # all_schema_files = [f for f in all_schema_files if 'account' in os.path.basename(f).lower()]
+    # all_schema_files = [f for f in all_schema_files if 'order' in os.path.basename(f).lower()]
 
     print(f"Found {len(all_schema_files)} schema files")
     index = 1

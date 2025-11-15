@@ -20,11 +20,12 @@ class SchemaRecord:
     SCHEMA_RECORD_STATUS_ERROR = 'error'
 
 
-    def __init__(self, parent, figma_link, unique_key):
+    def __init__(self, parent, figma_link, unique_key, title = None):
         self.parent = parent
         self.figma_link = figma_link
         self.unique_key = unique_key
         self.filename = None
+        self.title = title
         self.status = self.SCHEMA_RECORD_STATUS_ERROR
 
 
@@ -97,6 +98,37 @@ class ObjectSchema:
         return record
 
 
+    def _create_schema_array(self, unique_key):
+
+        keys = unique_key.split('.')
+        last_value = self._object_schema
+        for sub_key in keys:
+            if isinstance(last_value, dict) and sub_key in last_value:
+                next_value = last_value[sub_key]
+                if not isinstance(next_value, dict):
+                    break
+                
+                last_value = next_value
+                last_key = sub_key
+            else:
+                last_value = None
+                last_key = None
+                break
+
+        schema_records = []
+        for key, value in last_value.items():
+            element_name = key.lower().strip().replace(' ', '-')
+            full_key = f'{unique_key}.{element_name}'
+            record = SchemaRecord(self, value, full_key, key)
+            print(f'Initialized schema record for {full_key} with title: {key} and figma link: {value}')
+            if full_key in self.all_values:
+                raise ValueError(f'Schema value for {full_key} already exists')
+            self.all_values[full_key] = record
+            schema_records.append(record)
+
+        return schema_records
+
+
     def __init__(self, schema_file):
 
         self.page_not_found_image = './media/page-not-found.png'
@@ -128,6 +160,10 @@ class ObjectSchema:
         self.desktop_settings_vendor = self._create_schema_value('desktop.settings.vendor')
         self.desktop_settings_operations = self._create_schema_value('desktop.settings.operations')
         self.desktop_settings_client = self._create_schema_value('desktop.settings.client')
+
+        self.email_notifications_vendor_array = self._create_schema_array('email-notifications.vendor')
+        self.email_notifications_operations_array = self._create_schema_array('email-notifications.operations')
+        self.email_notifications_client_array = self._create_schema_array('email-notifications.client')
 
         self.mobile_list_view_vendor = self._create_schema_value('mobile.list-view.vendor')
         self.mobile_list_view_operations = self._create_schema_value('mobile.list-view.operations')

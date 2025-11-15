@@ -19,6 +19,21 @@
             "client": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=58554-115615&t=sIjDicft2wEMevEO-1"
         }
     },
+    "email-notifications": {
+        "vendor": {
+            "Order Placed": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=29-6034&t=rZGtz81RpbZE6P9m-0",
+            "Order Processing": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=365-4311&t=rZGtz81RpbZE6P9m-0"
+        },
+        "operations": {
+        },
+        "client": {
+            "Order Placed": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=602-18951&t=rZGtz81RpbZE6P9m-0",
+            "Order Updated": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=1-27453&t=rZGtz81RpbZE6P9m-0",
+            "Order Querying": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=1-27845&t=rZGtz81RpbZE6P9m-0",
+            "Order Completed": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=28-6196&t=rZGtz81RpbZE6P9m-0",
+            "Order Failed": "https://www.figma.com/design/lhJsW4s8riyfaeCaYaucvW/Notifications?node-id=29-5904&t=rZGtz81RpbZE6P9m-0"
+        }
+    },
     "mobile": {
         "list-view": {
             "vendor": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4295-44757&t=EdOkgvkkFEoP780Y-1",
