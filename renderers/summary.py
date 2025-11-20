@@ -48,25 +48,25 @@ def write_summary_page(object_schemas):
             '{{object-details-link}}': f'''<p><ac:link><ri:page ri:content-title="{object_schema.confluence_page_title}"></ri:page><ac:link-body><strong>{object_schema.object_name}</strong></ac:link-body></ac:link></p>''',
             '{{state-diagram-link}}': populate_cell(object_schema.state_diagram),
             
-            '{{object-desktop-grid-view-vendor-link}}': populate_cell(object_schema.desktop_grid_view_vendor),
-            '{{object-desktop-grid-view-operations-link}}': populate_cell(object_schema.desktop_grid_view_operations),
-            '{{object-desktop-grid-view-client-link}}': populate_cell(object_schema.desktop_grid_view_client),
+            '{{object-desktop-grid-vendor-link}}': populate_cell(object_schema.desktop_grid_view_vendor),
+            '{{object-desktop-grid-operations-link}}': populate_cell(object_schema.desktop_grid_view_operations),
+            '{{object-desktop-grid-client-link}}': populate_cell(object_schema.desktop_grid_view_client),
             
-            '{{object-desktop-details-view-vendor-link}}': populate_cell(object_schema.desktop_details_view_vendor),
-            '{{object-desktop-details-view-operations-link}}': populate_cell(object_schema.desktop_details_view_operations),
-            '{{object-desktop-details-view-client-link}}': populate_cell(object_schema.desktop_details_view_client),
+            '{{object-desktop-details-vendor-link}}': populate_cell(object_schema.desktop_details_view_vendor),
+            '{{object-desktop-details-operations-link}}': populate_cell(object_schema.desktop_details_view_operations),
+            '{{object-desktop-details-client-link}}': populate_cell(object_schema.desktop_details_view_client),
             
-            '{{object-desktop-infocard-view-vendor-link}}': populate_cell(object_schema.desktop_infocard_view_vendor),
-            '{{object-desktop-infocard-view-operations-link}}': populate_cell(object_schema.desktop_infocard_view_operations),
-            '{{object-desktop-infocard-view-client-link}}': populate_cell(object_schema.desktop_infocard_view_client),
+            '{{object-desktop-infocard-vendor-link}}': populate_cell(object_schema.desktop_infocard_view_vendor),
+            '{{object-desktop-infocard-operations-link}}': populate_cell(object_schema.desktop_infocard_view_operations),
+            '{{object-desktop-infocard-client-link}}': populate_cell(object_schema.desktop_infocard_view_client),
             
-            '{{object-mobile-list-view-vendor-link}}': populate_cell(object_schema.mobile_list_view_vendor),
-            '{{object-mobile-list-view-operations-link}}': populate_cell(object_schema.mobile_list_view_operations),
-            '{{object-mobile-list-view-client-link}}': populate_cell(object_schema.mobile_list_view_client),
+            '{{object-mobile-list-vendor-link}}': populate_cell(object_schema.mobile_list_view_vendor),
+            '{{object-mobile-list-operations-link}}': populate_cell(object_schema.mobile_list_view_operations),
+            '{{object-mobile-list-client-link}}': populate_cell(object_schema.mobile_list_view_client),
 
-            '{{object-mobile-details-view-vendor-link}}': populate_cell(object_schema.mobile_details_view_vendor),
-            '{{object-mobile-details-view-operations-link}}': populate_cell(object_schema.mobile_details_view_operations),
-            '{{object-mobile-details-view-client-link}}': populate_cell(object_schema.mobile_details_view_client),
+            '{{object-mobile-details-vendor-link}}': populate_cell(object_schema.mobile_details_view_vendor),
+            '{{object-mobile-details-operations-link}}': populate_cell(object_schema.mobile_details_view_operations),
+            '{{object-mobile-details-client-link}}': populate_cell(object_schema.mobile_details_view_client),
 
             '{{object-email-notifications-count}}': populate_notifications_count(object_schema),
 

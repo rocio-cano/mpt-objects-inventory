@@ -158,17 +158,17 @@ class ObjectSchema:
 
         self.state_diagram = self._create_schema_value('state-diagram')
         
-        self.desktop_grid_view_vendor = self._create_schema_value('desktop.grid-view.vendor')
-        self.desktop_grid_view_operations = self._create_schema_value('desktop.grid-view.operations')
-        self.desktop_grid_view_client = self._create_schema_value('desktop.grid-view.client')
+        self.desktop_grid_view_vendor = self._create_schema_value('desktop.grid.vendor')
+        self.desktop_grid_view_operations = self._create_schema_value('desktop.grid.operations')
+        self.desktop_grid_view_client = self._create_schema_value('desktop.grid.client')
 
-        self.desktop_details_view_vendor = self._create_schema_value('desktop.details-view.vendor')
-        self.desktop_details_view_operations = self._create_schema_value('desktop.details-view.operations')
-        self.desktop_details_view_client = self._create_schema_value('desktop.details-view.client')
+        self.desktop_details_view_vendor = self._create_schema_value('desktop.details.vendor')
+        self.desktop_details_view_operations = self._create_schema_value('desktop.details.operations')
+        self.desktop_details_view_client = self._create_schema_value('desktop.details.client')
 
-        self.desktop_infocard_view_vendor = self._create_schema_value('desktop.infocard-view.vendor')
-        self.desktop_infocard_view_operations = self._create_schema_value('desktop.infocard-view.operations')
-        self.desktop_infocard_view_client = self._create_schema_value('desktop.infocard-view.client')
+        self.desktop_infocard_view_vendor = self._create_schema_value('desktop.infocard.vendor')
+        self.desktop_infocard_view_operations = self._create_schema_value('desktop.infocard.operations')
+        self.desktop_infocard_view_client = self._create_schema_value('desktop.infocard.client')
 
         self.desktop_spotlight_vendor = self._create_schema_value('desktop.spotlight.vendor')
         self.desktop_spotlight_operations = self._create_schema_value('desktop.spotlight.operations')
@@ -182,13 +182,13 @@ class ObjectSchema:
         self.email_notifications_operations_array = self._create_schema_array('email-notifications.operations')
         self.email_notifications_client_array = self._create_schema_array('email-notifications.client')
 
-        self.mobile_list_view_vendor = self._create_schema_value('mobile.list-view.vendor')
-        self.mobile_list_view_operations = self._create_schema_value('mobile.list-view.operations')
-        self.mobile_list_view_client = self._create_schema_value('mobile.list-view.client')
+        self.mobile_list_view_vendor = self._create_schema_value('mobile.list.vendor')
+        self.mobile_list_view_operations = self._create_schema_value('mobile.list.operations')
+        self.mobile_list_view_client = self._create_schema_value('mobile.list.client')
 
-        self.mobile_details_view_vendor = self._create_schema_value('mobile.details-view.vendor')
-        self.mobile_details_view_operations = self._create_schema_value('mobile.details-view.operations')
-        self.mobile_details_view_client = self._create_schema_value('mobile.details-view.client')
+        self.mobile_details_view_vendor = self._create_schema_value('mobile.details.vendor')
+        self.mobile_details_view_operations = self._create_schema_value('mobile.details.operations')
+        self.mobile_details_view_client = self._create_schema_value('mobile.details.client')
 
         self.object_render_folder = os.path.join(cfg.TEMP_RENDER_FOLDER, self.object_name)
 

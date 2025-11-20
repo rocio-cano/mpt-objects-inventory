@@ -3,17 +3,17 @@
     "confluence-page": "https://softwareone.atlassian.net/wiki/spaces/mpt/pages/6735691787/DG+Order+Object",
     "state-diagram": "https://www.figma.com/design/rHxTpbi2gpbZ4dmVlyeY2S/Object-Diagrams?node-id=6-364&t=L4IznjT8n7VAlv8s-0",
     "desktop": {
-        "grid-view": {
+        "grid": {
             "vendor": "https://www.figma.com/design/sMYzX191RktVW9iseyttjO/Commerce?node-id=16-260294&t=o2YvyPpeaSaSSci8-0",
             "operations": "https://www.figma.com/design/sMYzX191RktVW9iseyttjO/Commerce?node-id=16-259350&t=o2YvyPpeaSaSSci8-0",
             "client": "https://www.figma.com/design/sMYzX191RktVW9iseyttjO/Commerce?node-id=16-254650&t=o2YvyPpeaSaSSci8-0"
         },
-        "details-view": {
+        "details": {
             "vendor": "https://www.figma.com/design/sMYzX191RktVW9iseyttjO/Commerce?node-id=16-260628&t=o2YvyPpeaSaSSci8-0",
             "operations": "https://www.figma.com/design/sMYzX191RktVW9iseyttjO/Commerce?node-id=16-257843&t=o2YvyPpeaSaSSci8-0",
             "client": "https://www.figma.com/design/sMYzX191RktVW9iseyttjO/Commerce?node-id=16-255915&t=o2YvyPpeaSaSSci8-0"
         },
-        "infocard-view": {
+        "infocard": {
             "vendor": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=58554-115615&t=sIjDicft2wEMevEO-1",
             "operations": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=58554-115615&t=sIjDicft2wEMevEO-1",
             "client": "https://www.figma.com/proto/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=58554-115615&t=sIjDicft2wEMevEO-1"
@@ -35,12 +35,12 @@
         }
     },
     "mobile": {
-        "list-view": {
+        "list": {
             "vendor": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4295-44757&t=EdOkgvkkFEoP780Y-1",
             "operations": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4295-44198&t=EdOkgvkkFEoP780Y-1",
             "client": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4295-44470&t=EdOkgvkkFEoP780Y-1"
         },
-        "details-view": {
+        "details": {
             "vendor": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4237-43073&t=EdOkgvkkFEoP780Y-1",
             "operations": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4354-83050&t=JxpAPofAU4mgJccP-0",
             "client": "https://www.figma.com/design/y150KEJI7hSn7KzRuG8uyu/Native-Apps?node-id=4237-42821&t=EdOkgvkkFEoP780Y-1"
