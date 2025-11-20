@@ -4,14 +4,14 @@
     "state-diagram": "https://www.figma.com/design/rHxTpbi2gpbZ4dmVlyeY2S/Object-Diagrams?node-id=1114-328&t=WUVCiGBATPWqSdCC-1",
     "desktop": {
         "grid": {
-            "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=41809-53539&t=q5lIFDKPHMY9pgkB-1",
-            "operations": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=46414-91430&t=q5lIFDKPHMY9pgkB-1",
-            "client": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=33057-125912&t=q5lIFDKPHMY9pgkB-1"
+            "vendor": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-172225&t=BYIV5Ml0m1MYgFmx-11",
+            "operations": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-171299&t=BYIV5Ml0m1MYgFmx-11",
+            "client": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-173728&t=BYIV5Ml0m1MYgFmx-11"
         },
         "details": {
-            "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=41809-53529&t=q5lIFDKPHMY9pgkB-1",
-            "operations": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=54453-103044&t=q5lIFDKPHMY9pgkB-1",
-            "client": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=33057-125733&t=q5lIFDKPHMY9pgkB-1"
+            "vendor": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-172074&t=BYIV5Ml0m1MYgFmx-11",
+            "operations": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-171185&t=BYIV5Ml0m1MYgFmx-11",
+            "client": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-173592&t=BYIV5Ml0m1MYgFmx-11"
         },
         "infocard": {
             "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=143569-114583&t=q5lIFDKPHMY9pgkB-1",

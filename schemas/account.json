@@ -4,19 +4,19 @@
     "state-diagram": "https://www.figma.com/design/rHxTpbi2gpbZ4dmVlyeY2S/Object-Diagrams?node-id=789-249&t=WUVCiGBATPWqSdCC-1",
     "desktop": {
         "grid": {
-            "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=50021-74105&t=q5lIFDKPHMY9pgkB-1",
+            "vendor": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-30338&t=MMwEWfxjlihtiMMB-1",
             "operations": null,
-            "client": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=33057-127667&t=q5lIFDKPHMY9pgkB-1"
+            "client": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-36944&t=MMwEWfxjlihtiMMB-1"
         },
         "details": {
-            "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=50021-75757&t=q5lIFDKPHMY9pgkB-1",
+            "vendor": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-30106&t=MMwEWfxjlihtiMMB-1",
             "operations": null,
-            "client": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=33057-127460&t=q5lIFDKPHMY9pgkB-1"
+            "client": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-36621&t=MMwEWfxjlihtiMMB-1"
         },
         "settings": {
-            "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=39327-45177&t=q5lIFDKPHMY9pgkB-1",
-            "operations": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=33057-125922&t=q5lIFDKPHMY9pgkB-1",
-            "client": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=33057-125625&t=q5lIFDKPHMY9pgkB-1"
+            "vendor": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-172331&t=MMwEWfxjlihtiMMB-1",
+            "operations": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-171418&t=MMwEWfxjlihtiMMB-1",
+            "client": "https://www.figma.com/design/ZDDEwYhZNt6Y7XJBIaXdul/Account-Management?node-id=1-174852&t=MMwEWfxjlihtiMMB-1"
         },
         "infocard": {
             "vendor": "https://www.figma.com/design/dyiwmimDJgaav0uQW9eHgf/Marketplace-Platform?node-id=61328-93428&t=q5lIFDKPHMY9pgkB-1",
